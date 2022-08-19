@@ -13,7 +13,7 @@ export class News extends Component {
 
   async componentDidMount() {
     let url =
-      "https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&language=en&page=0";
+      "https://newsdata.io/api/1/news?apikey=pub_10425c0ca64b54f77b8738b83cc6ded921739&country=in&language=en&page=0";
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -25,7 +25,7 @@ export class News extends Component {
   }
 
   handlePrev = async () => {
-    let url = `https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&language=en&page=${
+    let url = `https://newsdata.io/api/1/news?apikey=pub_10425c0ca64b54f77b8738b83cc6ded921739&country=in&language=en&page=${
       this.state.nextPage - 2
     }`;
 
@@ -38,7 +38,7 @@ export class News extends Component {
   };
 
   handleNext = async () => {
-    let url = `https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&language=en&page=${this.state.nextPage}`;
+    let url = `https://newsdata.io/api/1/news?apikey=pub_10425c0ca64b54f77b8738b83cc6ded921739&country=in&language=en&page=${this.state.nextPage}`;
     console.log(url);
     let data = await fetch(url);
     let parseData = await data.json();
@@ -53,7 +53,9 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2 style={{ textAlign: "center" }}>GoNews: Top Headlines India</h2>
+        <h2 style={{ textAlign: "center" }} id="news_comp_title">
+          GoNews: Top Headlines India
+        </h2>
 
         <div className="row my-4">
           {this.state.articles.map((element) => {
@@ -73,7 +75,7 @@ export class News extends Component {
           <button
             disabled={this.state.nextPage <= 1}
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-dark"
             onClick={this.handlePrev}
             id="prev"
           >
@@ -82,7 +84,7 @@ export class News extends Component {
           <button
             disabled={this.state.nextPage == null}
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-dark"
             onClick={this.handleNext}
             id="next"
           >

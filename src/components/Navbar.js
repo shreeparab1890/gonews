@@ -21,6 +21,7 @@ export class Navbar extends Component {
       document.getElementById("prev").style.color = "black";
       document.getElementById("next").style.backgroundColor = "white";
       document.getElementById("next").style.color = "black";
+      document.getElementById("news_comp_title").style.color = "white";
 
       console.log(this.state.mode);
     } else {
@@ -30,6 +31,7 @@ export class Navbar extends Component {
       document.getElementById("prev").style.color = "white";
       document.getElementById("next").style.backgroundColor = "black";
       document.getElementById("next").style.color = "white";
+      document.getElementById("news_comp_title").style.color = "Black";
 
       console.log(this.state.mode);
     }
