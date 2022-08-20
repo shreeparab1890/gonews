@@ -15,10 +15,7 @@ import NewsWorld from "./components/NewsWorld";
 import LoadingBar from "react-top-loading-bar";
 
 export default class App extends Component {
-  //API_KEY = "pub_10425c0ca64b54f77b8738b83cc6ded921739"; //technirmiti
-  //API_KEY = "pub_10410549be92359c2bfd66cf231e090631555"; //shrikrishnaparab
-  //API_KEY = "pub_104413b1e915a96029cc67d08f717d9bf53f6"; //amayparab
-  API_KEY = "pub_104420ad73b8b37915e1321c1cb93a6d31c5d"; //technirmtisoftwares
+  API_KEY = process.env.REACT_APP_NEWS_API;
   state = {
     progress: 0,
   };
