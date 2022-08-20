@@ -13,7 +13,7 @@ export class NewsBusiness extends Component {
   }
 
   async componentDidMount() {
-    let url = `https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&category=${this.props.category}&language=en&page=0`;
+    let url = `https://newsdata.io/api/1/news?apikey=${this.props.api}&country=in&category=${this.props.category}&language=en&page=0`;
     this.setState({ loading: true });
     let data = await fetch(url);
     console.log(url);
@@ -28,9 +28,11 @@ export class NewsBusiness extends Component {
   }
 
   handlePrev = async () => {
-    let url = `https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&category=${
-      this.props.category
-    }&language=en&page=${this.state.nextPage - 2}`;
+    let url = `https://newsdata.io/api/1/news?apikey=${
+      this.props.api
+    }&country=in&category=${this.props.category}&language=en&page=${
+      this.state.nextPage - 2
+    }`;
     this.setState({ loading: true });
     let data = await fetch(url);
 
@@ -43,7 +45,7 @@ export class NewsBusiness extends Component {
   };
 
   handleNext = async () => {
-    let url = `https://newsdata.io/api/1/news?apikey=pub_10410549be92359c2bfd66cf231e090631555&country=in&category=${this.props.category}&language=en&page=${this.state.nextPage}`;
+    let url = `https://newsdata.io/api/1/news?apikey=${this.props.api}&country=in&category=${this.props.category}&language=en&page=${this.state.nextPage}`;
     console.log(url);
     this.setState({ loading: true });
     let data = await fetch(url);
