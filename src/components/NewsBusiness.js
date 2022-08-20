@@ -79,10 +79,17 @@ export class NewsBusiness extends Component {
                 <>
                   <div className="col-md-3 my-4" key={element.pubDate}>
                     <NewsItem
-                      title={element.title?.slice(0, 60)}
+                      title={
+                        element.title.length < 60
+                          ? element.title
+                          : element.title?.slice(0, 60) + "..."
+                      }
                       discription={element.description?.slice(0, 88)}
                       newsUrl={element.link}
                       imgUrl={element.image_url}
+                      date={element.pubDate}
+                      author={element.creator}
+                      source={element.source_id}
                     />
                   </div>
                 </>

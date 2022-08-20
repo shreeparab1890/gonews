@@ -74,7 +74,7 @@ export class Navbar extends Component {
                 style={{ marginLeft: "50px" }}
               >
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link className="nav-link " aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
