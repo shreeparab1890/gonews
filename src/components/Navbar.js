@@ -22,6 +22,7 @@ export class Navbar extends Component {
       document.getElementById("next").style.backgroundColor = "white";
       document.getElementById("next").style.color = "black";
       document.getElementById("news_comp_title").style.color = "white";
+      document.getElementById("footer").style.backgroundColor = "black";
       var elms = document.querySelectorAll("[id=read_more_btn]");
       for (var i = 0; i < elms.length; i++)
         elms[i].style.backgroundColor = "black";
@@ -35,6 +36,7 @@ export class Navbar extends Component {
       document.getElementById("next").style.backgroundColor = "black";
       document.getElementById("next").style.color = "white";
       document.getElementById("news_comp_title").style.color = "Black";
+      document.getElementById("footer").style.backgroundColor = "#102039";
 
       var elms1 = document.querySelectorAll("[id=read_more_btn]");
       for (var x = 0; x < elms1.length; x++)
@@ -48,10 +50,15 @@ export class Navbar extends Component {
     return (
       <div>
         <nav
-          className={`navbar navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode}`}
+          className={`navbar navbar-expand-lg `}
+          style={
+            this.state.mode !== "light"
+              ? { backgroundColor: "black" }
+              : { backgroundColor: "#102039" }
+          }
         >
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/" style={{ color: "white" }}>
               NewsOnGo
             </Link>
             <button
@@ -75,62 +82,143 @@ export class Navbar extends Component {
               >
                 <li className="nav-item">
                   <Link className="nav-link " aria-current="page" to="/">
-                    Home
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Home
+                    </span>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link className="nav-link" to="/business">
-                    Business
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {" "}
+                      Business{" "}
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/entertainment">
-                    Entertainment
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {" "}
+                      Entertainment
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/environment">
-                    Environment
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {" "}
+                      Environment
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/health">
-                    Health
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {" "}
+                      Health{" "}
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/politics">
-                    Politics
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Politics
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/science">
-                    Science
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Science{" "}
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/sports">
-                    Sports
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      {" "}
+                      Sports
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/technology">
-                    Technology
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Technology
+                    </span>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link className="nav-link" to="/world">
-                    World
+                    <span
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                        fontSize: "18px",
+                      }}
+                    >
+                      World{" "}
+                    </span>
                   </Link>
                 </li>
               </ul>
-              <div
-                className={`form-check form-switch text-${
-                  this.state.mode === "light" ? "dark" : "light"
-                }`}
-              >
+              <div className={`form-check form-switch text-light`}>
                 <input
                   className="form-check-input"
                   type="checkbox"
