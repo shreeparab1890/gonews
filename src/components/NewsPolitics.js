@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 
-export class News extends Component {
+export class NewsPolitics extends Component {
   constructor() {
     super();
     this.state = {
@@ -58,11 +58,16 @@ export class News extends Component {
     });
   };
 
+  handleSenCase = (str) => {
+    let newText = str.charAt(0).toUpperCase() + str.slice(1);
+    return newText;
+  };
+
   render() {
     return (
       <div className="container my-3">
         <h1 style={{ textAlign: "center" }} id="news_comp_title">
-          GoNews: Top News Headlines India
+          GoNews: {this.handleSenCase(this.props.category)} News Headlines India
         </h1>
         {this.state.loading ? <Spinner></Spinner> : <></>}
         <div className="row my-4">
@@ -107,4 +112,4 @@ export class News extends Component {
   }
 }
 
-export default News;
+export default NewsPolitics;

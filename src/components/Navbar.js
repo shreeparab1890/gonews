@@ -22,6 +22,9 @@ export class Navbar extends Component {
       document.getElementById("next").style.backgroundColor = "white";
       document.getElementById("next").style.color = "black";
       document.getElementById("news_comp_title").style.color = "white";
+      var elms = document.querySelectorAll("[id=read_more_btn]");
+      for (var i = 0; i < elms.length; i++)
+        elms[i].style.backgroundColor = "black";
 
       console.log(this.state.mode);
     } else {
@@ -32,6 +35,10 @@ export class Navbar extends Component {
       document.getElementById("next").style.backgroundColor = "black";
       document.getElementById("next").style.color = "white";
       document.getElementById("news_comp_title").style.color = "Black";
+
+      var elms1 = document.querySelectorAll("[id=read_more_btn]");
+      for (var x = 0; x < elms1.length; x++)
+        elms1[x].style.backgroundColor = "#1266f1";
 
       console.log(this.state.mode);
     }
@@ -71,9 +78,51 @@ export class Navbar extends Component {
                     Home
                   </Link>
                 </li>
+
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
-                    About
+                  <Link className="nav-link" to="/business">
+                    Business
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/entertainment">
+                    Entertainment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/environment">
+                    Environment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/health">
+                    Health
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/politics">
+                    Politics
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/science">
+                    Science
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/sports">
+                    Sports
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/technology">
+                    Technology
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/world">
+                    World
                   </Link>
                 </li>
               </ul>
