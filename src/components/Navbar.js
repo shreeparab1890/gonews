@@ -21,7 +21,7 @@ export class Navbar extends Component {
       document.getElementById("prev").style.color = "black";
       document.getElementById("next").style.backgroundColor = "white";
       document.getElementById("next").style.color = "black";
-      document.getElementById("news_comp_title").style.color = "white";
+      document.getElementById("news_comp_title1").style.color = "white";
       document.getElementById("footer").style.backgroundColor = "black";
       var elms = document.querySelectorAll("[id=read_more_btn]");
       for (var i = 0; i < elms.length; i++)
@@ -35,7 +35,7 @@ export class Navbar extends Component {
       document.getElementById("prev").style.color = "white";
       document.getElementById("next").style.backgroundColor = "black";
       document.getElementById("next").style.color = "white";
-      document.getElementById("news_comp_title").style.color = "Black";
+      document.getElementById("news_comp_title1").style.color = "Black";
       document.getElementById("footer").style.backgroundColor = "#102039";
 
       var elms1 = document.querySelectorAll("[id=read_more_btn]");

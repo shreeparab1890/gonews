@@ -14,17 +14,21 @@ export class News extends Component {
   }
 
   async updateNews(page) {
+    this.props.setProgress(10);
     let url = `https://newsdata.io/api/1/news?apikey=${this.props.api}&country=in&category=${this.props.category}&language=en&page=${page}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     console.log(url);
     let parseData = await data.json();
+    this.props.setProgress(70);
     this.setState({
       articles: parseData.results,
       totalResults: parseData.totalResults,
       nextPage: parseData.nextPage,
       loading: false,
     });
+    this.props.setProgress(100);
   }
 
   async componentDidMount() {
@@ -50,7 +54,11 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h1 style={{ textAlign: "center" }} id="news_comp_title">
+        <h1
+          className="my-3"
+          style={{ textAlign: "center" }}
+          id="news_comp_title1"
+        >
           GoNews: Top News Headlines India
         </h1>
         {/* {this.state.loading ? <Spinner></Spinner> : <></>} */}

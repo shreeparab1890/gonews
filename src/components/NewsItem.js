@@ -7,12 +7,16 @@ export class NewsItem extends Component {
     return (
       <div>
         <div className="card" style={{ height: "550px" }}>
-          <span
-            className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
-            style={{ marginLeft: "-35px", zIndex: "1" }}
+          <div
+            style={{
+              right: "0",
+              display: "flex",
+              justifyContent: "flex-end",
+              position: "absolute",
+            }}
           >
-            {source}
-          </span>
+            <span className="badge rounded-pill bg-danger">{source}</span>
+          </div>
           <a href={newsUrl} target="_blank" rel="noreferrer">
             <img
               src={!imgUrl ? "https://shrikrishnaparab.tech/ina.jpg" : imgUrl}
